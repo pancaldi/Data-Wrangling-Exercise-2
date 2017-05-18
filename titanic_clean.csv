@@ -1,0 +1,33 @@
+#load data in RStudio
+
+library(dplyr)
+library(tidyr) 
+readr::readr_csv(titanic_original_csv)
+
+#Port of embarkation
+
+for(i in 1:length(titanic_orig$embarked)){
+  if(titanic_orig$embarked[i] == " ")
+    else $embarked[i] <- "S"
+} 
+  
+  #Age
+
+titanic$Age <- mean(titanic_orig$age, na.rm = TRUE) 
+for(j in 1:length(titanic_orig$age)) 
+  if ($age[j] == NA){
+  titanic_avgAge[j] <- titanicavgAge
+    }  
+  
+
+#Lifeboat
+
+  df <-mutate(df, boat = ifelse(is.null(boat)) | is.na(boat) |trimws(boat) == " ", NA, boat)
+              
+# Cabin              
+
+df <- mutate(df, has_cabin_number = ifelse(is.null(cabin)) | trimws(cabin) == " ", 0, 1) 
+
+#Write back to csv
+
+write.csv(df, file = "titanic_clean.csv") 
