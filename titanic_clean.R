@@ -1,4 +1,4 @@
-#load data in RStudio
+load data in RStudio
 
 library(dplyr)
 library(tidyr) 
@@ -17,7 +17,7 @@ df$embarked[i] <- "S"
 
 meanAge <- mean(df$age, na.rm = TRUE)
 df <- mutate(df, age = ifelse(is.na(age), meanAge, age))
-    }  
+      
   
 
 #Lifeboat
